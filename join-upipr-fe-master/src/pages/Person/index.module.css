@@ -1,0 +1,19 @@
+.person{
+    background:#110b0b;
+    color:white;
+}
+.info__container{
+    border:1px solid gold;
+    border-radius: 20px;
+    width:40vw;
+    margin: 10vh auto;
+    padding:3vw;
+    font-size: 20px;
+    box-shadow: 0 0 5px 1px gold;
+}
+.info__container >div:nth-child(1) img
+{
+     height: 15vw;
+     width:15vw;
+     border-radius: 5vw;
+}

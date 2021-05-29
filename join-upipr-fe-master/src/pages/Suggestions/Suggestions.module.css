@@ -1,0 +1,26 @@
+.indiv__suggestion
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:5px 0px;
+    border-radius: 7px;
+  padding: 8px;
+  cursor: pointer;
+}
+.indiv__suggestion >div{
+
+}
+.indiv__suggestion >div:nth-child(1) p
+{
+  margin: 0;
+  padding: 0;
+
+}
+.active__background
+{
+  background-color:black;
+  
+}
+

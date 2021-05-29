@@ -1,10 +1,42 @@
 import React from 'react';
-import './index.css';
-
+import styles from './index.module.css';
+import axios from "axios"
+import {useParams} from "react-router-dom"
 function Person() {
+  const[isLoading,setLoading]=React.useState(false)
+  const[starData,setStarData]=React.useState({})
+  const {id}=useParams()
+  React.useEffect(()=>{
+    axios.get(`https://swapi.dev/api/people/${id}/`)
+    .then((res)=>{
+      setLoading(true)
+      setStarData(res.data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+
+  },[id])
+  
+
   return (
-    <div className="person">
-      <h1>Luke Skywalker</h1>
+    <div className={styles.person}>
+       {isLoading?<div style={{margin:"auto"}}>......isLoading</div>:
+       <div className={styles.info__container}>
+          
+                   
+           <div>
+               <p>Name:{starData.name}</p>
+               <p>Height:{starData.height}</p>
+               <p>Mass:{starData.mass}</p>
+               <p>Hair Color: {starData.hair_color}</p>
+               <p>Skin Color: {starData.skin_color}</p>
+               <p>Eye Color: {starData.Eye_color}</p>
+           </div>
+      </div>}
     </div>
   );
 }

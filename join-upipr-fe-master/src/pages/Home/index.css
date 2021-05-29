@@ -1,6 +1,39 @@
+.main__page__cont{
+    border:1px solid green;
+  
+}
 .search-input {
-    width: 400px;
+    width: 30vw;
+    margin: 0vh 30vw;
     padding: 16px 24px;
+    border-radius: 25px;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 16px;
+
+    background: #2d2f30;
+   
+    color: #f2f2f2;
+    
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+    border:10px solid red;
+    
+}
+
+.logo img {
+    width: 20vw;
+}
+.suggestion__bar{
+   
+    width: 30vw;
+    margin: 0.5vh 30vw;
+    padding:16px 24px;
     border-radius: 25px;
     border: 0;
     outline: 0;
@@ -8,14 +41,8 @@
     font-size: 16px;
 
     background: #2d2f30;
+    
     color: #f2f2f2;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.logo img {
-    width: 200px;
+    height:40vh;
+    overflow-y:auto;
 }
