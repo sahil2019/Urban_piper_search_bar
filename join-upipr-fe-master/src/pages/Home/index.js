@@ -88,7 +88,7 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
       setCursor((c)=>(c>0?c-1:0))
     }
   }
-  if (e.key=="Enter"&&cursor>0)
+  if (e.key=="Enter"&&cursor>=0)
   {
     let arr=data[cursor].url.split("/")
 

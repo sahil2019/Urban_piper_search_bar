@@ -34,7 +34,7 @@ function Person() {
                <p>Mass: &nbsp;{starData.mass}</p>
                <p>Hair Color: &nbsp;{starData.hair_color}</p>
                <p>Skin Color:&nbsp; {starData.skin_color}</p>
-               <p>Eye Color: &nbsp;{starData.Eye_color}</p>
+               <p>Eye Color: &nbsp;{starData.eye_color}</p>
            </div>
       </div>}
     </div>
