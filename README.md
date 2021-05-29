@@ -1,6 +1,8 @@
 # Urban_piper_search_bar
 search bar for urban piper
 
+* <a href="https://sahil-urbanpiper-search-bar.netlify.app/">Live Demo</a>
+
 ## Build a Search Bar to find People in star wars Api
 
 * Used debouncing to limit the number  of api calls
