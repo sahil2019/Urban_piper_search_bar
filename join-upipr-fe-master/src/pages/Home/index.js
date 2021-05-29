@@ -17,19 +17,24 @@ function HomePage() {
   const[hide,setHide]=React.useState(true)
   
   const[cursor,setCursor]=React.useState(-1)
+
+ 
   
 
 function getData(query){
-  
- axios.get(`https://swapi.dev/api/people/?search=${query}`)
+  if(query)
+  {
+    axios.get(`https://swapi.dev/api/people/?search=${query}`)
  .then((res)=>{
    setData(res.data.results)
    console.log(res.data.results)
-   setHide(false)
+    setHide(false)
  })
  .catch((err)=>{
    console.log(err)
  })
+ 
+  }
  
 }
 const debounceFunction = (getFunc,delay)=>{
@@ -52,14 +57,15 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
 
   const handleChange=(e)=>{
      setSearch(e.target.value)
+   
      
      if(e.target.value!=""||search!="")
      {
        
       debouncesave(e.target.value)
-      setHide((prev)=>!prev)
+       setHide(false)
      }
-     if(e.target.value==""||search=="")
+     if(e.target.value==""||search==""||data.length==0)
      {
        setData([])
        setHide(true)
@@ -93,6 +99,9 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
   }
 
   }
+ 
+  
+
   return (
     <div className="main__page__cont">
       <div className="logo">
@@ -107,7 +116,7 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
         />
        
        {hide?null:(
-         <div className="suggestion__bar">
+         <div className="suggestion__bar" >
          {data?.map((item,index)=>
             <Suggestions 
               key={index} 
