@@ -1,29 +1,27 @@
 .main__page__cont{
-   
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .search-input {
     width: 30vw;
-    margin: 0vh 30vw;
+    /* margin: 0vh 30vw; */
+
     padding: 16px 24px;
     border-radius: 25px;
-
     border: 0;
     outline: 0;
-
     font-size: 16px;
-
     background: #2d2f30;
-   
     color: #f2f2f2;
+    flex:1;
     
 }
 
 .logo {
     text-align: center;
     margin-bottom: 35px;
-    
-    
 }
 
 .logo img {
@@ -43,6 +41,21 @@
     background: #2d2f30;
     
     color: #f2f2f2;
-    height:40vh;
+    /* height:40vh; */
     overflow-y:hidden;
+    border: 1px;
+}
+.search__bar__icons
+{
+    display: flex;
+    border:1px solid red;
+   /* justify-content:center;
+   align-items: center; */
+   background: #2d2f30;
+   width:34vw;
+   align-items: center;
+   border-radius: 25px;
+   border: 0;
+   outline: 0;
+
 }

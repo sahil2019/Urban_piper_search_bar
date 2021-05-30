@@ -9,9 +9,12 @@
   padding: 8px;
   cursor: pointer;
 }
-.indiv__suggestion >div{
-
-}
+/* .indiv__suggestion:hover{
+  background-color: black;
+} */
+/* .indiv__suggestion >div:hover{
+  background-color:black;
+} */
 .indiv__suggestion >div:nth-child(1) p
 {
   margin: 0;

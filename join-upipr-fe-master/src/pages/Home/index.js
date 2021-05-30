@@ -4,6 +4,7 @@ import './index.css';
 import axios from "axios"
 import Suggestions from "../Suggestions/Suggestions"
 import {useHistory} from "react-router-dom"
+import {FaSearch} from "react-icons/fa"
 
 
 function HomePage() {
@@ -26,7 +27,7 @@ function getData(query){
   {
     axios.get(`https://swapi.dev/api/people/?search=${query}`)
  .then((res)=>{
-   setData(res.data.results)
+   setData(res.data.results.filter((_,index)=>index<5))
    console.log(res.data.results)
     setHide(false)
  })
@@ -107,6 +108,7 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
       <div className="logo">
         <img src={logo} alt="Star Wars Logo" />
       </div>
+      <div class="search__bar__icons">
       <input 
         value={search}
         onChange={handleChange}
@@ -114,6 +116,8 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
         placeholder="Search by name" 
         onKeyUp={handleKeyEvent}
         />
+        <FaSearch style={{color:"yellow",fontSize:"20px",padding:"1vw"}}/>
+      </div>
        
        {hide?null:(
          <div className="suggestion__bar" >

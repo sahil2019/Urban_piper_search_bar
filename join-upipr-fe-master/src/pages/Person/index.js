@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import axios from "axios"
 import {useParams} from "react-router-dom"
 function Person() {
-  const[isLoading,setLoading]=React.useState(false)
+  const[isLoading,setLoading]=React.useState(true)
   const[starData,setStarData]=React.useState({})
   const {id}=useParams()
   React.useEffect(()=>{
@@ -24,7 +24,7 @@ function Person() {
 
   return (
     <div className={styles.person}>
-       {isLoading?<div style={{margin:"auto"}}>......isLoading</div>:
+       {isLoading?<div className={styles.loader}>......isLoading</div>:
        <div className={styles.info__container}>
           
                    
