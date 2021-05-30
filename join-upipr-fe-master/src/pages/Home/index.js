@@ -19,20 +19,25 @@ function HomePage() {
   
   const[cursor,setCursor]=React.useState(-1)
 
+  const [isLoading,setLoading]=React.useState(false)
  
   
 
 function getData(query){
   if(query)
-  {
+  {  setLoading(true)
     axios.get(`https://swapi.dev/api/people/?search=${query}`)
  .then((res)=>{
+ 
    setData(res.data.results.filter((_,index)=>index<5))
    console.log(res.data.results)
     setHide(false)
  })
  .catch((err)=>{
    console.log(err)
+ })
+ .finally(()=>{
+   setLoading(false)
  })
  
   }
@@ -116,7 +121,7 @@ const debouncesave=React.useCallback(debounceFunction((value)=>getData(value),30
         placeholder="Search by name" 
         onKeyUp={handleKeyEvent}
         />
-        <FaSearch style={{color:"yellow",fontSize:"20px",padding:"1vw"}}/>
+      {isLoading?<div className="loader"></div>:  <FaSearch style={{color:"yellow",fontSize:"20px",padding:"1vw"}}/>}
       </div>
        
        {hide?null:(
